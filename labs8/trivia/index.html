@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener('DOMContentLoaded', function()
+            {
+                const buttons = document.querySelectorAll('.mc');
+                const p1 = document.querySelector('#p1');
+                buttons.forEach((btn) =>
+                {
+                    btn.addEventListener('click', function()
+                    {
+                        if (btn.name == 'correct')
+                        {
+                            btn.style.backgroundColor = 'green';
+                            btn.style.color = 'white';
+                            p1.innerHTML = 'Correct!';
+                        }
+                        else
+                        {
+                            btn.style.backgroundColor = 'red';
+                            btn.style.color = 'white';
+                            p1.innerHTML = 'Incorrect';
+                        }
+                    });
+                });
+
+                const button = document.querySelector('#check');
+                const p2 = document.querySelector('#p2');
+                button.addEventListener('click', function()
+                {
+                    const answer = document.querySelector('#ans').value;
+                    if (answer == 'Ottawa')
+                    {
+                        p2.innerHTML = 'Correct!';
+                    }
+                    else
+                    {
+                        p2.innerHTML = 'Incorrect';
+                    }
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Who invented microwave oven?</h3> <!-- Percy Spencer-->
+                <button type="button" class="mc" name="incorrect">Christopher Sholes</button>
+                <button type="button" class="mc" name="correct">Percy Spencer</button>
+                <button type="button" class="mc" name="incorrect">Tim Berners-Lee</button>
+                <button type="button" class="mc" name="incorrect">Philo Farnsworth</button>
+                <p id="p1"></p>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the capital for Canada?</h3> <!-- Ottawa -->
+                <input id="ans" autocomplete="off" type="off">
+                <button id="check">Check Answer</button>
+                <p id="p2"></p>
+            </div>
+        </div>
+    </body>
+</html>
