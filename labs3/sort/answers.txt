@@ -1,0 +1,22 @@
+sort1 uses: bubble sort
+
+How do you know?:
+Its running time in the worst case, reversed50000, has the longest running time.
+Recall the O of bubble sort is (n-1)^2, which is the largest among these three.
+And Its running time in the best case, sorted50000, has the shortest running time.
+Recall the omega of bubble sort is n, which is the smallest among these three.
+
+sort2 uses: merge sort
+
+How do you know?:
+Its running time in the worst and the best case are quite similar.
+Recall the theta of merge sort is n log n, the performance is almost the same in all situations.
+And it's the fastest method among most of the cases.
+
+sort3 uses: selection sort
+
+How do you know?:
+Its running time in the worst and the best case are quite similar.
+Recall the theta of merge sort is n(n-1)/2, the performance is almost the same in all situations.
+And its running is slower than the merge sort and faster than the selection sort in the reversed50000 case,
+where n is large enough to show the difference.
